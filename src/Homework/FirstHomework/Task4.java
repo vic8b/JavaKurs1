@@ -1,8 +1,7 @@
 package Homework.FirstHomework;
 
 class Task4 {
-
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("Podaj temperaturę w stopniach Celsjusza: ");
         // for simplicity, I've chosen int
         int temp = Input.sc.nextInt();

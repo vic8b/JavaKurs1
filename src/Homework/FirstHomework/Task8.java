@@ -1,15 +1,14 @@
 package Homework.FirstHomework;
 
-public class Task8 {
-    public static final String FOOD = "żywność";
-    public static final String BOOKS = "książki";
-    public static final String SERVICES = "usługi";
-    public static final String CLOTHES = "ubrania";
-    public static final String ELECTRONICS = "elektronika";
-    public static final String OTHERS = "inne";
+class Task8 {
+    private static final String FOOD = "żywność";
+    private static final String BOOKS = "książki";
+    private static final String SERVICES = "usługi";
+    private static final String CLOTHES = "ubrania";
+    private static final String ELECTRONICS = "elektronika";
+    private static final String OTHERS = "inne";
 
-
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("VAT dla danej kategorii");
         System.out.println("Podaj kategorię produktu: (" + FOOD + ", " + BOOKS + ", " + SERVICES + ", " + CLOTHES
                 + ", " + ELECTRONICS + ", " + OTHERS + ")");

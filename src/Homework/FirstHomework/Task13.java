@@ -7,7 +7,7 @@ class Task13 {
     private static final Random RANDOM = new Random();
     private static final String[] MOVES = {"k", "p", "n"};
 
-    public static void mainLoop() {
+    static void mainLoop() {
         String playerMove = getUserChoice();
         String computerMove = getRandomComputerChoice();
 

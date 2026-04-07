@@ -1,7 +1,7 @@
 package Homework.FirstHomework;
 
 class Task3 {
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("Podaj wiek: ");
         int age = Input.sc.nextInt();
         Input.sc.nextLine();

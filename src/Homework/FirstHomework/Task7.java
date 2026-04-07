@@ -1,9 +1,9 @@
 package Homework.FirstHomework;
 
-public class Task7 {
-    public static final int AGE_OF_MAJORITY = 18;
+class Task7 {
+    private static final int AGE_OF_MAJORITY = 18;
 
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("Podaj wiek: ");
         int ageFromUser = Input.sc.nextInt();
         Input.sc.nextLine();

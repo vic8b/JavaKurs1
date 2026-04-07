@@ -3,10 +3,13 @@ package Homework.FirstHomework;
 import java.time.YearMonth;
 
 class Task12 {
-    public static void mainLoop() {
+    static void mainLoop() {
         int year = getYearFromUser();
+        Input.sc.nextLine();
         int month = getMonthFromUser();
+        Input.sc.nextLine();
         int day = getDayFromUser();
+        Input.sc.nextLine();
 
         checkIfDateIsCorrect(day, month, year);
     }

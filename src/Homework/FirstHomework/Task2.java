@@ -1,8 +1,7 @@
 package Homework.FirstHomework;
 
 class Task2 {
-
-    public static void mainLoop() {
+    static void mainLoop() {
         int number = getNumberFromUser();
         numberIsEven(number);
     }

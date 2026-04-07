@@ -1,8 +1,7 @@
 package Homework.FirstHomework;
 
 class Task11 {
-
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("Podaj rok do sprawdzenia przestępnośći: ");
         int yearFromUser = Input.sc.nextInt();
         Input.sc.nextLine();

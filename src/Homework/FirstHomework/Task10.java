@@ -3,7 +3,7 @@ package Homework.FirstHomework;
 class Task10 {
     private static final int MIN_PASSWORD_LENGTH = 8;
 
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("Podaj hasło: ");
         String userPassword = Input.sc.nextLine();
 

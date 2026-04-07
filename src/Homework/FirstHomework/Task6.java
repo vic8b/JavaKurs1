@@ -1,8 +1,7 @@
 package Homework.FirstHomework;
 
 class Task6 {
-
-    public static void mainLoop() {
+    static void mainLoop() {
         System.out.println("Podaj numer dnia tygodnia: ");
         int number = Input.sc.nextInt();
         Input.sc.nextLine();

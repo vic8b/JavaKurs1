@@ -1,7 +1,7 @@
 package Homework.FirstHomework;
 
 class Task9 {
-    public static void mainLoop() {
+    static void mainLoop() {
         double a = getNumberFromUser();
         double b = getNumberFromUser();
         String operator = getOperatorFromUser();
@@ -19,8 +19,6 @@ class Task9 {
             default -> System.out.println("nieznany operator");
         }
     }
-
-
 
     private static String getOperatorFromUser() {
         System.out.println("Podaj operator: ");

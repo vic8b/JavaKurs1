@@ -1,9 +1,9 @@
 package Homework.FirstHomework;
 
 class Task1 {
-    public static final int AGE_OF_MAJORITY = 18;
+    private static final int AGE_OF_MAJORITY = 18;
 
-    public static void mainLoop() {
+    static void mainLoop() {
         int age = getAgeFromUser();
 
         checkUserAge(age);
