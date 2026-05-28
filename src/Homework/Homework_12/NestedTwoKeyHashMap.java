@@ -159,7 +159,7 @@ class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
     public Map<K1, V> column(K2 k2) {
         Objects.requireNonNull(k2);
 
-        HashMap<K1, V> columnMap = new HashMap<>();
+        Map<K1, V> columnMap = new HashMap<>();
 
         for (Map.Entry<K1, Map<K2, V>> entry : map.entrySet()) {
             if (entry.getValue().containsKey(k2)) {
