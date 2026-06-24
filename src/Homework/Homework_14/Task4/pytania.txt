@@ -1,0 +1,28 @@
+## Pytania kontrolne
+
+1. Dlaczego trzymamy saldo w groszach (long), a nie w PLN (double)?
+Ze względu na większą dokładność przybliżeń, dokładność zaokrąglenia - wykluczenie błędów
+(najmniejsza jednostka vs. typ zmiennoprzecinkowy).
+Dokładność pieniądza w logice biznesowej.
+
+2. Dlaczego blokujemy konta w transfer w porządku rosnącego id, a nie w kolejności from, to?
+W celu uniknięcia deadlocka - blokujemy dwa konta przy przelewie, nie chcemy zablokować dwóch zasobów w różnej kolejności
+Taki porządek powoduje spójność aplikacji/kolejności blokowania i zapobiega możliwości zablokowania programu.
+
+3. Dlaczego synchronized na BankAccount.deposit/withdraw nie wystarcza do bezpiecznego przelewu (musimy zablokować całe transfer)?
+Synchronized w tym przypadku synchronizuje poszczególne metody i wartości, których one dotyczą
+Do bezpiecznego przelewu wymagane jest także zablokowanie poszczególnych kont (bo operacje wykonywane są w dwóch krokach)
+w celu uniknięcia rozbieżności/nadpisania wartości i dla bezpieczeństwa spójności wartości.
+
+4. Co stałoby się, gdybyśmy użyli AtomicLong jako saldo i prosto getAndAdd(-amount) w wypłacie? (Podpowiedź: brak walidacji „czy stać”.)
+Typ ten pozwala na ujednolicenie operacji, natomiast nie waliduje poszczególnych warunków - działa bezwarunkowo.
+Salda w takich okolicznościach wykraczałyby poza zaimplementowane warunki (np. spadałyby poniżej zera),
+przez co reguły biznesowe byłyby zagrożone. Brak środków nie spowoduje błędu.
+
+5. W wersji z ReentrantLock.tryLock(timeout) – co dzieje się, gdy nie udało się uzyskać locka? Jak system się zachowuje? Czy to jest deadlock?
+Nie, to nie jest deadlock.
+W przypadku braku locka metoda zwraca fałsz - deadlock jest unikany, rezygnujemy z próby wykonania operacji i tym samym
+stany kont są zachowane w prawidłowy sposób.
+Jeżeli byłby to deadlock, wątki byłyby zablokowane na zawsze; tutaj program kontynuuje działanie.
+W celu zapobiegnięcia nieskończonego blokowania wątków nawzajem (ale nie jako deadlock) zaimplementowany w metodzie
+jest czas oczekiwania wątku - żeby wątki przestały "rozsynchronizowały".
